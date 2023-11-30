@@ -1,4 +1,4 @@
-def call(String buildStatus, String release_tag=null, String jobName=null, String buildNumber="0", String jobUrl=null) {
+def call(String buildStatus, String release_tag=null, String jobName=null, int buildNumber=0, String jobUrl=null) {
     try {
         println "in try block"
         ansiColor('xterm') {
@@ -24,12 +24,10 @@ def call(String buildStatus, String release_tag=null, String jobName=null, Strin
                 println "testing"
                 println buildNumber
                 if (buildNumber == 0)
-                    buildNumber = env.BUILD_NUMBER.toInteger()
+                    buildNumber = 10
                     // def buildNumberString = env.BUILD_NUMBER
                     // buildNumber = buildNumberString.isInteger() ? buildNumberString.toInteger() : 0
                     // buildNumber = env.BUILD_NUMBER
-                if (buildNumber == '')
-                    buildNumber = 0
                 if (jobUrl == null)
                     jobUrl = env.JOB_URL
 
