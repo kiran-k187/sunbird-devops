@@ -23,7 +23,7 @@ def call(String buildStatus, String release_tag=null, String jobName=null, int b
                 println env.BUILD_NUMBER
                 println "testing2"
                 if (buildNumber == 0)
-                    //env.BUILD_NUMBER = env.BUILD_NUMBER == "" ? "0" : env.BUILD_NUMBER
+                    env.BUILD_NUMBER = env.BUILD_NUMBER == "" ? "0" : env.BUILD_NUMBER
                     // if (env.BUILD_NUMBER == "")
                     //     env.BUILD_NUMBER = "0"
                     println env.BUILD_NUMBER
