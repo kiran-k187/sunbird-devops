@@ -21,7 +21,11 @@ def call(String buildStatus, String release_tag=null, String jobName=null, int b
                 if (jobName == null)
                     jobName = env.JOB_NAME
                 println env.BUILD_NUMBER
+                println "testing2"
                 if (buildNumber == 0)
+                    if (env.BUILD_NUMBER == "")
+                        env.BUILD_NUMBER = "0"
+                    println env.BUILD_NUMBER
                     buildNumber = env.BUILD_NUMBER.toInteger()
                     // def buildNumberString = env.BUILD_NUMBER
                     // buildNumber = buildNumberString.isInteger() ? buildNumberString.toInteger() : 0
