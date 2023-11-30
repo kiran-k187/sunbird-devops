@@ -1,5 +1,6 @@
-def call(String buildStatus, String release_tag=null, String jobName=null, String buildNumber=0, String jobUrl=null) {
+def call(String buildStatus, String release_tag=null, String jobName=null, String buildNumber="0", String jobUrl=null) {
     try {
+        println "in try block"
         ansiColor('xterm') {
             String ANSI_GREEN = "\u001B[32m"
             String ANSI_NORMAL = "\u001B[0m"
