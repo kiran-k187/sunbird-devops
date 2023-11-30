@@ -8,6 +8,7 @@ def call(String buildStatus, String release_tag=null, String jobName=null, int b
             String ANSI_YELLOW = "\u001B[33m"
 
             stage('slack_notify') {
+                println "testing"
                 if(buildStatus == "FAILURE"){
                     slack_status = 'danger'
                     build_status = "Failed"
